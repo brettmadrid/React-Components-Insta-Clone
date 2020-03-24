@@ -7,14 +7,7 @@ import PostHeader from "./PostHeader";
 import "./Posts.css";
 
 // pass props in this file to
-const Post = ({
-  username,
-  thumbnailUrl,
-  imageUrl,
-  likes,
-  timestamp,
-  comments
-}) => {
+const Post = ({ username, thumbnailUrl, imageUrl, likes, comments }) => {
   const [like, setLikes] = useState(likes);
 
   return (
@@ -23,7 +16,7 @@ const Post = ({
       <div className="post-image-wrapper">
         <img alt="post thumbnail" className="post-image" src={imageUrl} />
       </div>
-      <LikeSection likes={like} addLikes={setLikes} />
+      <LikeSection likes={like} setLikes={setLikes} />
       <CommentSection postId={imageUrl} comments={comments} />
     </div>
   );
